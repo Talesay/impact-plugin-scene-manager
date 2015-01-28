@@ -18,7 +18,7 @@ ig.module(
         init: function () {
             ig.SceneManager.instance = this;
         },
-        set: function (scene, data) {
+        load: function (scene, data) {
             var key;
             for (key in data) {
                 if (data.hasOwnProperty(key)) {
@@ -30,3 +30,4 @@ ig.module(
     });
     return new ig.SceneManager();
 });
+/*test*/
