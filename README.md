@@ -1,0 +1,1 @@
+# impact-plugin-scene-manager
