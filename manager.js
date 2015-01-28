@@ -18,9 +18,13 @@ ig.module(
         init: function () {
             ig.SceneManager.instance = this;
         },
-        load: function (scene, data) {
-            /*Experimental: trying to pass data between two instances of ig.Game*/
-            ig.merge(scene, data);
+        set: function (scene, data) {
+            var key;
+            for (key in data) {
+                if (data.hasOwnProperty(key)) {
+                    scene.prototype[key] = data[key];
+                }
+            }
             ig.system.setGame(scene);
         }
     });
