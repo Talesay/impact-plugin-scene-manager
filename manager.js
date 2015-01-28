@@ -19,7 +19,6 @@ ig.module(
             ig.SceneManager.instance = this;
         },
         set: function (scene, data) {
-            /*test*/
             var key;
             for (key in data) {
                 if (data.hasOwnProperty(key)) {
