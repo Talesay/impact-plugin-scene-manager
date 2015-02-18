@@ -1,6 +1,9 @@
 # GitEye project file
 /.project
 
+# Markdox output
+output.md
+
 # Os & Process detritus
 Thumbs.db
 ehthumbs.db
