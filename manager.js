@@ -42,7 +42,7 @@ ig.module(
 		/**
 		 *Modifies the prototype of __scene__ with __data__, then sets the game to a new instance of __scene__
 		 *
-		 *```
+		 *```javascript
 		 *var data = { message: 'It Works!' };
 		 *ig.scene.set(ig.SceneTest, data);
 		 *ig.game.message;
