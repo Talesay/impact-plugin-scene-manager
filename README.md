@@ -24,6 +24,15 @@ __JSLint Flags__
 
 global ig
 
+## ig.scene.set(scene, data)
+
+Modifies the prototype of __scene__ with __data__, then sets the game to a new instance of __scene__
+
+### Params:
+
+* **Object** *scene* 
+* **Object** *data* 
+
 # The MIT License (MIT)
 ## Copyright (c) 2015 Talesay
 

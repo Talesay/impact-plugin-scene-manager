@@ -21,35 +21,44 @@ __JSLint Flags__
 */
 /*global ig*/
 ig.module(
-    'plugins.scene.manager'
+	'plugins.scene.manager'
 ).requires(
-    'impact.impact'
+	'impact.impact'
 ).defines(function () {
-    'use strict';
-    ig.SceneManager = ig.Class.extend({
-        staticInstantiate: function (ignore) {
-            this.alias('scene');
-            return ig.SceneManager.instance || null;
-        },
-        alias: function (name) {
-            Object.defineProperty(ig, name, {
-                value: this
-            });
-        },
-        init: function () {
-            ig.SceneManager.instance = this;
-        },
-        set: function (scene, data) {
-            var key;
-            for (key in data) {
-                if (data.hasOwnProperty(key)) {
-                    scene.prototype[key] = data[key];
-                }
-            }
-            ig.system.setGame(scene);
-        }
-    });
-    return new ig.SceneManager();
+	'use strict';
+	ig.SceneManager = ig.Class.extend({
+		staticInstantiate: function (ignore) {
+			this.alias('scene');
+			return ig.SceneManager.instance || null;
+		},
+		alias: function (name) {
+			Object.defineProperty(ig, name, {
+				value: this
+			});
+		},
+		init: function () {
+			ig.SceneManager.instance = this;
+		},
+		/**
+		 *Modifies the prototype of __scene__ with __data__, then sets the game to a new instance of __scene__
+		 *@method ig.scene.set
+		 *@param {Object} scene
+		 *@param {Object} data
+		 */
+		set: function (scene, data) {
+			if (!(scene instanceof ig.Game)) {
+				throw ('scene is not an instance of ig.Game');
+			}
+			var key;
+			for (key in data) {
+				if (data.hasOwnProperty(key)) {
+					scene.prototype[key] = data[key];
+				}
+			}
+			ig.system.setGame(scene);
+		}
+	});
+	return new ig.SceneManager();
 });
 /**
  * # The MIT License (MIT)
