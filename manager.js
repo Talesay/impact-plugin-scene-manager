@@ -1,7 +1,7 @@
 /**
 # Impact JS Scene Manager
 
-This plugins extends the native Array object with non-enumerable utility methods
+This plugins allows you to pass data to new instances of ig.Game without global variables
 
 __Installation__
 
